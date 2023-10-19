@@ -4,16 +4,17 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_PATH
+      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      933328750435.dkr.ecr.ap-northeast-1.amazonaws.com
 
   build:
     commands:
       - docker build -t dash_app .
-      - docker tag dash_app:latest $ECR_PATH/dash_app:latest
+      - docker tag dash_app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/dash_app:latest
       - echo create image completed
 
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push $ECR_PATH/dash_app:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/dash_app:latest
       - echo Build completed on `date`
