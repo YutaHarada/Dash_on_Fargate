@@ -15,5 +15,5 @@ phases:
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push $ECR_PATH/my-firstrepo:latest
+      - docker push $ECR_PATH/dash_app:latest
       - echo Build completed on `date`
