@@ -9,11 +9,11 @@ phases:
   build:
     commands:
       - docker build -t dash_app .
-      - docker tag dash_app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/dash_app:latest
-      - echo create image completed
+      - docker tag dash_app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/dash_app:latest   
+
 
   post_build:
     commands:
+      - echo create image completed
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/dash_app:latest
-      - echo Build completed on `date`
