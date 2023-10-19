@@ -1,8 +1,10 @@
 # Fargate + Dashによるダッシュボードアプリケーションの実装
 
-## 概要
-以下の構成のダッシュボードアプリケーションを構築する。
-
+## 目標
+世界中の天気予報情報を無料で取得できる [Open Weather API](https://openweathermap.org/) から情報を取得し、日本のいくつかの都市について天気情報を確認できるダッシュボードを構築すること。
+<img src="./images/dash_image.png">
+  
+## 構成図
 <img src="./images/dash_app.drawio.png">
 
 1. EventBridgeをトリガーに毎日指定時刻になったらOpen Weather APIから天気予報情報(json形式)を取得しS3に格納。
