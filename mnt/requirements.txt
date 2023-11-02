@@ -4,3 +4,5 @@ dash==2.13.0
 dash-bootstrap-components==1.4.2 
 plotly==5.16.1
 boto3==1.28.51
+beautifulsoup4 == 4.12.2
+requests == 2.31.0 

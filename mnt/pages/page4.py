@@ -45,9 +45,10 @@ def update_output(n_clicks):
     if n_clicks > 0:
         # ここでPythonスクリプトを実行
         result = get_info()
-        # curlコマンドでAPIに送信
+        # APIにアクセス
+        # (注)：URLはAPIのURLに書き換える必要あり
         response = requests.post(
-            "http://localhost:5000/predict",
+            "http://localhost:8000/predict",
             json={'feature': result})
         if response.ok:
             return f'{response.json()["prediction"]}'
