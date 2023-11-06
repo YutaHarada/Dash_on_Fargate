@@ -45,8 +45,10 @@ def update_output(n_clicks):
     if n_clicks > 0:
         # ここでPythonスクリプトを実行
         result = get_info()
+        print(result)
         # APIにアクセス
         url = os.getenv('API_URL')
+        print(url)
         response = requests.post(
             url, json={'feature': result}
             )
