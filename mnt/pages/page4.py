@@ -3,9 +3,8 @@ import requests
 import os
 from module.getweather import get_info
 
-from dash import html
+from dash import html, Input, Output, callback
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, callback
 
 
 # ページレイアウトの設定
