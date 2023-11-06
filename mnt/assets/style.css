@@ -2,12 +2,12 @@
     flex-direction: row;
     font-size: 20px; /* リンクの文字サイズ */
     color: ghostwhite;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 #navibar .navbar-brand {
     font-size: 40px; /* ブランドの文字サイズ */
     font-weight: bold;  /* 太文字にする */
     color: ghostwhite; 
-    margin-right: 800px;
+    margin-right: 700px;
 }

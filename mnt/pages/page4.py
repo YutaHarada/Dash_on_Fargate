@@ -15,21 +15,30 @@ layout = html.Div(
                 dbc.Col(
                     html.Div(
                         [
-                            dbc.Button("クリックしてね",
-                                       id="submit-button",
-                                       color="primary",
-                                       className="mb-3",
-                                       n_clicks=0),
-                            html.Div(id="container-button-basic")
+                            dbc.Button(
+                                "CLICK",
+                                id="submit-button",
+                                color="primary",
+                                className="mb-3",
+                                n_clicks=0
+                                ),
+                            html.Div(
+                                id="container-button-basic",
+                                style={"color": "blue"}
+                                )
                         ],
-                        style={"textAlign": "center",
-                               "border": "1px solid #ccc",
-                               "padding": "20px"}
+                        style={
+                            "textAlign": "center",
+                            "border": "1px solid #ccc",
+                            "padding": "20px",
+                            "box-shadow": "0px 0px 10px dimgray",
+                            "background-color": "lightblue"
+                            }
                     ),
                     width=6
                 ),
                 className="justify-content-center align-items-center",
-                style={"height": "100vh"}
+                style={"height": "50vh"}
             ),
         ],
         fluid=True
@@ -55,4 +64,4 @@ def update_output(n_clicks):
         else:
             return 'APIからエラーレスポンスが返されました'
     else:
-        return 'ボタンを押してください!'
+        return 'ボタンを押してください！'
