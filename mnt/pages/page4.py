@@ -1,13 +1,14 @@
 # import文
+import requests
+import os
+from module.getweather import get_info
+
 from dash import html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, callback
 
-import requests
 
-from module.getweather import get_info
-
-
+# ページレイアウトの設定
 layout = html.Div(
     dbc.Container(
         [
@@ -46,10 +47,10 @@ def update_output(n_clicks):
         # ここでPythonスクリプトを実行
         result = get_info()
         # APIにアクセス
-        # (注)：URLはAPIのURLに書き換える必要あり
+        url = os.getenv('API_URL')
         response = requests.post(
-            "http://localhost:8000/predict",
-            json={'feature': result})
+            url, json={'feature': result}
+            )
         if response.ok:
             return f'{response.json()["prediction"]}'
         else:

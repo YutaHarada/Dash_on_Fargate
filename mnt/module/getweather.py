@@ -1,7 +1,6 @@
 import datetime
 import urllib.request
 from bs4 import BeautifulSoup
-import json
 
 
 def str2float(weather_data):
@@ -68,9 +67,4 @@ def get_info():
 
     feature = {x[0]: x[1] for x in zip(fields, scraping(url, yesterday))}
 
-    return json.dumps(feature, ensure_ascii=False)
-
-
-if __name__ == "__main__":
-    print(type(get_info()))
-    print(get_info())
+    return feature
